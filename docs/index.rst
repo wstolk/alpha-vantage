@@ -11,7 +11,7 @@ Alpha-Vantage API Python wrapper!
     >>> from alpha_vantage import Client
     >>> from alpha_vantage.functions import TimeSeries
     >>> client = Client(api_key="abcdefg123")
-    >>> ts = TimeSeries(symbol="IBM")
+    >>> ts = TimeSeries(client=client, symbol="IBM")
     >>> daily = ts.daily()
     >>> daily.metadata.symbol
     'IBM'
@@ -22,11 +22,19 @@ Alpha-Vantage API Python wrapper!
     >>> daily.timeseries[0].timestamp
     datetime.datetime(2021, 1, 20, 12, 30, 0, 000000)
 
+Features
+----------------
+
+* Easily integrate stock market data in your project
+* Better parsing of API response
+* Exceptions based on API responses
 
 
 Indices and tables
-==================
+-------------------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+   :maxdepth: 2
+
+   functions/timeseries
+   models/models_timeseries
