@@ -1,7 +1,7 @@
 __title__ = 'alpha-vantage-py'
 __description__ = 'Alpha Vantage Python package.'
-__url__ = 'https://github.com/wstolk/vantage-py'
-__version__ = '0.0.3'
+__url__ = 'https://github.com/wstolk/alpha-vantage'
+__version__ = '0.0.4'
 __build__ = 0x022501
 __author__ = 'Wouter Stolk'
 __author_email__ = 'stolk.wouter@gmail.com'

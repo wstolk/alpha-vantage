@@ -42,6 +42,7 @@ setup(
         'Programming Language :: Python :: 3',
     ],
     project_urls={
-        'Source': 'https://github.com/wstolk/vantage_py',
+        'Source': 'https://github.com/wstolk/alpha-vantage',
+        'Documentation': 'https://alpha-vantage-py.readthedocs.io/en/latest/'
     },
 )

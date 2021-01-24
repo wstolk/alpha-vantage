@@ -6,11 +6,17 @@ test:
 	# This runs all of the tests, on both Python 2 and Python 3.
 	detox
 
-publish:
-	pip install 'twine>=1.5.0'
-	python setup.py sdist bdist_wheel
-	twine upload dist/*
+publish-test:
+	pip3 install 'twine>=1.5.0'
+	python3 setup.py sdist bdist_wheel
+	python3 -m twine upload --repository testpypi dist/*
 	rm -fr build dist .egg requests.egg-info
+
+publish:
+	pip3 install 'twine>=1.5.0'
+	python3 setup.py sdist bdist_wheel
+	python3 -m twine upload dist/*
+	rm -fr build dist .egg alpha_vantage_py.egg-info
 
 docs:
 	cd docs && make html
