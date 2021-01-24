@@ -29,9 +29,8 @@ Features
 * Better parsing of API response
 * Exceptions based on API responses
 
-
-alpha_vantage module
-================
+alpha\_vantage module
+=====================
 
 .. automodule:: alpha_vantage
     :members:

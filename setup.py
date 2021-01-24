@@ -1,26 +1,27 @@
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 packages = ['alpha_vantage']
 
 requires = [
-    'requests>=2.25.1'
+    'requests>=2'
 ]
 
 test_requirements = []
 
 about = {}
-with open(os.path.join(here, 'alpha_vantage', '__version__.py'), 'r', 'utf-8') as f:
+with open(os.path.join(here, 'alpha_vantage', '__version__.py'), 'r') as f:
     exec(f.read(), about)
 
-with open('README.md', 'r', 'utf-8') as f:
+with open('README.md', 'r') as f:
     readme = f.read()
 
 setup(
     name=about['__title__'],
+    packages=find_packages(),
     version=about['__version__'],
     description=about['__description__'],
     long_description=readme,
@@ -28,7 +29,6 @@ setup(
     author=about['__author__'],
     author_email=about['__author_email__'],
     url=about['__url__'],
-    packages=packages,
     package_data={'': ['LICENSE', 'NOTICE']},
     package_dir={'alpha_vantage': 'alpha_vantage'},
     include_package_data=True,
