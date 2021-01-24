@@ -30,11 +30,10 @@ Features
 * Exceptions based on API responses
 
 
-Indices and tables
--------------------
+alpha_vantage module
+================
 
-.. toctree::
-   :maxdepth: 2
-
-   functions/timeseries
-   models/models_timeseries
+.. automodule:: alpha_vantage
+    :members:
+    :undoc-members:
+    :show-inheritance:

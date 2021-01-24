@@ -1,4 +1,4 @@
-__title__ = 'vantage-py'
+__title__ = 'alpha-vantage'
 __description__ = 'Alpha Vantage Python package.'
 __url__ = 'https://github.com/wstolk/vantage-py'
 __version__ = '0.0.1'
