@@ -16,15 +16,18 @@
 
 
 # -- Project information -----------------------------------------------------
-import alpha_vantage
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../alpha_vantage/'))
 
-project = alpha_vantage.__title__
-copyright = alpha_vantage.__copyright__
-author = alpha_vantage.__author__
+
+project = "alpha-vantage-python"
+copyright = "2021, Wouter Stolk"
+author = "Wouter Stolk"
 
 # The full version, including alpha/beta/rc tags
-version = alpha_vantage.__version__
-release = alpha_vantage.__version__
+version = "0.0.1"
+release = "0.0.1"
 
 
 # -- General configuration ---------------------------------------------------
