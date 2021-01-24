@@ -16,13 +16,15 @@
 
 
 # -- Project information -----------------------------------------------------
+import alpha_vantage
 
-project = 'alpha-vantage'
-copyright = '2021, Wouter Stolk'
-author = 'Wouter Stolk'
+project = alpha_vantage.__title__
+copyright = alpha_vantage.__copyright__
+author = alpha_vantage.__author__
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+version = alpha_vantage.__version__
+release = alpha_vantage.__version__
 
 
 # -- General configuration ---------------------------------------------------
