@@ -20,7 +20,14 @@ class TimeSeries:
         """Constructor method
         """
         self.client = client
+        self.datatype = datatype
         self.url_append = f"symbol={symbol}&outputsize={outputsize}&datatype=json"
+
+        if datatype == "pandas":
+            try:
+                import pandas as pd
+            except ModuleNotFoundError:
+                raise ModuleNotFoundError("Please make sure pandas is installed.")
 
     def __process__(self, data: dict, metadata: dict, format: str):
         """Processes input and returns a TimeSeriesModel instance.
@@ -51,7 +58,16 @@ class TimeSeries:
                 volume=int(data[key]["5. volume"])
             ))
 
-        return TimeSeriesModel(metadata=metadata, series_data=result)
+        ts = TimeSeriesModel(metadata=metadata, series_data=result)
+
+        if self.datatype == "class":
+            return ts
+        elif self.datatype == "pandas":
+            try:
+                import pandas as pd
+                return pd.DataFrame(ts.get_list())
+            except ModuleNotFoundError:
+                raise ModuleNotFoundError("Please make sure pandas is installed.")
 
     def daily(self):
         """Retrieve stock data on a daily level.

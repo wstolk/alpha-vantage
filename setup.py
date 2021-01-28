@@ -10,7 +10,9 @@ requires = [
     'requests>=2'
 ]
 
-test_requirements = []
+test_requirements = [
+    'pandas>=1.2'
+]
 
 about = {}
 with open(os.path.join(here, 'alpha_vantage', '__version__.py'), 'r') as f:
@@ -34,6 +36,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.6",
     install_requires=requires,
+    test_requirements=test_requirements,
     license=about['__license__'],
     classifiers=[
         'License :: OSI Approved :: Apache Software License',

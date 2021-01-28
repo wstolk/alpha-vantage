@@ -7,6 +7,13 @@ class MetadataModel:
         self.last_refreshed = last_refreshed
         self.timezone = timezone
 
+    def get_dict(self):
+        return {
+            "symbol": self.symbol,
+            "last_refreshed": self.last_refreshed,
+            "timezone": self.timezone
+        }
+
 
 
 class TimeSerieModel:
@@ -18,8 +25,21 @@ class TimeSerieModel:
         self.close = close
         self.volume = volume
 
+    def get_dict(self):
+        return {
+            "timestamp": self.timestamp,
+            "open": self.open,
+            "high": self.high,
+            "low": self.low,
+            "close": self.close,
+            "volume": self.volume
+        }
+
 
 class TimeSeriesModel:
     def __init__(self, series_data: Sequence[TimeSerieModel], metadata: MetadataModel):
         self.metadata = metadata
         self.timeseries = series_data
+
+    def get_list(self):
+        return [{**row.get_dict(), **self.metadata.get_dict()} for row in self.timeseries]
