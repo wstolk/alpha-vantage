@@ -17,6 +17,9 @@ daily = ts.daily()
 for day in daily.timeseries:
     print(f"- {day.timestamp}: {day.high}")
 
+# close client
+client.close()
+
 ```
 
 ## Installation 

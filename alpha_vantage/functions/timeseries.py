@@ -79,4 +79,6 @@ class TimeSeries:
 
         url = f"?function=TIME_SERIES_INTRADAY&adjusted={str(adjusted).lower()}&{self.url_append}"
         data = self.client.get(url=url).json()
-        return self.__process__(data=data[f"Time Series ({interval})"], metadata=data["Meta Data"], format="%Y-%m-%d %H:%M:%S")
+        return self.__process__(data=data[f"Time Series ({interval})"],
+                                metadata=data["Meta Data"],
+                                format="%Y-%m-%d %H:%M:%S")

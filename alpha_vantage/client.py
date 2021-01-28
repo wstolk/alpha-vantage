@@ -1,3 +1,5 @@
+import logging
+
 from requests import Session
 from urllib.parse import urljoin
 
@@ -27,5 +29,5 @@ class Client(Session):
         :return: requests response object
         """
         url = urljoin(self.prefix_url, f"{parameters}&apikey={self.api_key}")
-        print(url)
+        logging.debug(url)
         return super(Client, self).request(method, url, *args, **kwargs)

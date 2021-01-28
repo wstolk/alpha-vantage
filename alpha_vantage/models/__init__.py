@@ -1,1 +1,1 @@
-from alpha_vantage.models.model_timeseries import MetadataModel, TimeSeriesModel, TimeSerieModel
+from alpha_vantage.models.timeseries import MetadataModel, TimeSeriesModel, TimeSerieModel
